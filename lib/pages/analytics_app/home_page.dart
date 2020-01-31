@@ -12,7 +12,6 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(
         title: Text(pascalCaseFromRouteName(routeName)),
@@ -23,7 +22,7 @@ class HomePage extends StatelessWidget {
           ),
           PopupMenuButton<ThemeMode>(
             icon: Icon(Icons.more_vert),
-            initialValue: context.watch<ThemeModeNotifier>().mode,
+            initialValue: context.select((ThemeModeNotifier n) => n.mode),
             onSelected: (mode) => context.read<ThemeModeNotifier>().mode = mode,
             itemBuilder: (context) {
               return ThemeMode.values.map((mode) {
@@ -40,6 +39,34 @@ class HomePage extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed: () {},
+      ),
+      bottomSheet: DraggableScrollableSheet(
+        maxChildSize: 0.4,
+        minChildSize: 0.25,
+        initialChildSize: 0.25,
+        expand: false,
+        builder: (context, scrollController) {
+          final cardElevation =
+              context.select((ThemeModeNotifier n) => n.cardEelevation);
+          return ListView(
+            padding: const EdgeInsets.symmetric(vertical: 16),
+            controller: scrollController,
+            children: <Widget>[
+              ListTile(
+                title: const Text('Card Elevation'),
+                subtitle: Slider(
+                  value: cardElevation,
+                  min: 0,
+                  max: 10,
+                  divisions: 10,
+                  onChanged: (value) =>
+                      context.read<ThemeModeNotifier>().cardEelevation = value,
+                  label: '$cardElevation',
+                ),
+              ),
+            ],
+          );
+        },
       ),
       body: SizedBox.expand(
         child: MaxWidthPaddingBuilder(

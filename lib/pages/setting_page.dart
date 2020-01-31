@@ -31,7 +31,7 @@ class _ThemeSwitchTile extends StatelessWidget {
     return ListTile(
       title: const Text('Theme Mode'),
       trailing: DropdownButton<ThemeMode>(
-        value: context.watch<ThemeModeNotifier>().mode,
+        value: context.select((ThemeModeNotifier n) => n.mode),
         onChanged: (mode) => context.read<ThemeModeNotifier>().mode = mode,
         items: ThemeMode.values
             .map((value) => DropdownMenuItem(

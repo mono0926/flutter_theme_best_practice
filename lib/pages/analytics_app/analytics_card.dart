@@ -50,7 +50,6 @@ class AnalyticsCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colorScheme = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
     return Card(
       color: cardColor,
@@ -198,9 +197,4 @@ class _LineChart extends StatelessWidget {
       ),
     );
   }
-}
-
-extension TextStyleEx on TextStyle {
-  TextStyle updateColorIfTrue(bool isError, {@required Color color}) =>
-      isError ? copyWith(color: color) : this;
 }

@@ -16,9 +16,9 @@ class AnalyticsApp extends StatelessWidget {
     return SubApp(
       child: MaterialApp(
         home: const HomePage(),
-        theme: buildLightTheme(),
-        darkTheme: buildDarkTheme(),
-        themeMode: context.watch<ThemeModeNotifier>().mode,
+        theme: buildLightTheme(context),
+        darkTheme: buildDarkTheme(context),
+        themeMode: context.select((ThemeModeNotifier n) => n.mode),
       ),
     );
   }

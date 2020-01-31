@@ -1,25 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:mono_kit/mono_kit.dart';
+import 'package:provider/provider.dart';
+import 'package:theme_best_practice/models/theme_mode_notifier.dart';
 
-ThemeData buildLightTheme() {
+ThemeData buildLightTheme(BuildContext context) {
   return ThemeData.from(
     colorScheme: const ColorScheme.light(),
     textTheme: _textTheme(isLight: true),
-  ).appliedCommon().appliedAnalyticsCommon();
+  ).appliedCommon().appliedAnalyticsCommon(context);
 }
 
-ThemeData buildDarkTheme() {
+ThemeData buildDarkTheme(BuildContext context) {
   return ThemeData.from(
     colorScheme: const ColorScheme.dark(),
     textTheme: _textTheme(isLight: false),
-  ).appliedCommon().appliedAnalyticsCommon();
+  ).appliedCommon().appliedAnalyticsCommon(context);
 }
 
 extension ThemeDataEx on ThemeData {
-  ThemeData appliedAnalyticsCommon() {
+  ThemeData appliedAnalyticsCommon(BuildContext context) {
     return copyWith(
-      cardTheme: const CardTheme(
-        elevation: 4,
+      cardTheme: CardTheme(
+        elevation: context.select((ThemeModeNotifier n) => n.cardEelevation),
       ),
       buttonTheme: buttonTheme.copyWith(
         shape: RoundedRectangleBorder(
