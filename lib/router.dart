@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mono_kit/mono_kit.dart';
+import 'package:recase/recase.dart';
+import 'package:theme_best_practice/pages/analytics_app/analytics_app.dart';
+import 'package:theme_best_practice/pages/setting_page.dart';
 
 import 'util/util.dart';
 
@@ -12,9 +15,13 @@ typedef WidgetPageBuilder = Widget Function(
 class Router {
   static const root = '/';
 
-  final _routes = <String, WidgetPageBuilder>{};
+  final _routes = <String, WidgetPageBuilder>{
+    AnalyticsApp.routeName: (context, settings) => const AnalyticsApp(),
+  };
   final _fadeRoutes = <String, WidgetPageBuilder>{};
-  final _modalRoutes = <String, WidgetPageBuilder>{};
+  final _modalRoutes = <String, WidgetPageBuilder>{
+    SettingPage.routeName: (context, settings) => const SettingPage(),
+  };
 
   Route<dynamic> onGenerateRoute(RouteSettings settings) {
     logger.info(settings.name);
@@ -45,4 +52,19 @@ class Router {
     assert(false, 'unexpected settings: $settings');
     return null;
   }
+}
+
+String pascalCaseFromRouteName(String name) => name.substring(1).pascalCase;
+
+@immutable
+class PageInfo {
+  const PageInfo({
+    @required this.routeName,
+  });
+
+  final String routeName;
+
+  static const all = [
+    PageInfo(routeName: AnalyticsApp.routeName),
+  ];
 }

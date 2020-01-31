@@ -71,6 +71,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.1"
+  enum_to_string:
+    dependency: "direct main"
+    description:
+      name: enum_to_string
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.8"
+  fl_chart:
+    dependency: "direct main"
+    description:
+      name: fl_chart
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.8.0"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -138,12 +152,12 @@ packages:
   mono_kit:
     dependency: "direct main"
     description:
-      name: mono_kit
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.12.4+1"
+      path: "../flutter_mono_kit"
+      relative: true
+    source: path
+    version: "0.13.0"
   nested:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: nested
       url: "https://pub.dartlang.org"
@@ -156,6 +170,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.6.4"
+  path_drawing:
+    dependency: transitive
+    description:
+      name: path_drawing
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.4.1"
+  path_parsing:
+    dependency: transitive
+    description:
+      name: path_parsing
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.4"
   path_provider:
     dependency: transitive
     description:
@@ -171,7 +199,7 @@ packages:
     source: hosted
     version: "1.8.0+1"
   pedantic_mono:
-    dependency: "direct main"
+    dependency: "direct dev"
     description:
       name: pedantic_mono
       url: "https://pub.dartlang.org"
@@ -208,10 +236,12 @@ packages:
   provider:
     dependency: "direct main"
     description:
-      name: provider
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "4.0.2"
+      path: "."
+      ref: extensions
+      resolved-ref: "8e56e26aa3cd694ab24161fb26e248d61ca39e0f"
+      url: "https://github.com/rrousselGit/provider.git"
+    source: git
+    version: "4.1.0"
   quiver:
     dependency: transitive
     description:
@@ -219,6 +249,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.5"
+  recase:
+    dependency: "direct main"
+    description:
+      name: recase
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.0.0"
   rxdart:
     dependency: transitive
     description:
