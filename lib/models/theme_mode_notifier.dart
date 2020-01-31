@@ -8,11 +8,17 @@ class ThemeModeNotifier with ChangeNotifier {
   double get cardEelevation => _cardElevation;
 
   set mode(ThemeMode mode) {
+    if (_mode == mode) {
+      return;
+    }
     _mode = mode;
     notifyListeners();
   }
 
   set cardEelevation(double elevation) {
+    if (_cardElevation == elevation) {
+      return;
+    }
     _cardElevation = elevation;
     notifyListeners();
   }
