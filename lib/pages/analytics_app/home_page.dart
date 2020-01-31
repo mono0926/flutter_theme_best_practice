@@ -47,7 +47,7 @@ class HomePage extends StatelessWidget {
         expand: false,
         builder: (context, scrollController) {
           final cardElevation =
-              context.select((ThemeModeNotifier n) => n.cardEelevation);
+              context.select((ThemeModeNotifier n) => n.cardElevation);
           return ListView(
             padding: const EdgeInsets.symmetric(vertical: 16),
             controller: scrollController,
@@ -60,7 +60,7 @@ class HomePage extends StatelessWidget {
                   max: 10,
                   divisions: 10,
                   onChanged: (value) =>
-                      context.read<ThemeModeNotifier>().cardEelevation = value,
+                      context.read<ThemeModeNotifier>().cardElevation = value,
                   label: '$cardElevation',
                 ),
               ),

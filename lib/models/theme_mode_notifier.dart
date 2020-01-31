@@ -5,7 +5,7 @@ class ThemeModeNotifier with ChangeNotifier {
   var _cardElevation = 4.0;
 
   ThemeMode get mode => _mode;
-  double get cardEelevation => _cardElevation;
+  double get cardElevation => _cardElevation;
 
   set mode(ThemeMode mode) {
     if (_mode == mode) {
@@ -15,7 +15,7 @@ class ThemeModeNotifier with ChangeNotifier {
     notifyListeners();
   }
 
-  set cardEelevation(double elevation) {
+  set cardElevation(double elevation) {
     if (_cardElevation == elevation) {
       return;
     }

@@ -21,7 +21,7 @@ extension ThemeDataEx on ThemeData {
   ThemeData _appliedCommon(BuildContext context) {
     return copyWith(
       cardTheme: CardTheme(
-        elevation: context.select((ThemeModeNotifier n) => n.cardEelevation),
+        elevation: context.select((ThemeModeNotifier n) => n.cardElevation),
       ),
       buttonTheme: buttonTheme.copyWith(
         shape: RoundedRectangleBorder(
