@@ -54,6 +54,8 @@ class HomePage extends StatelessWidget {
             children: <Widget>[
               ListTile(
                 title: const Text('Card Elevation'),
+                // TODO(mono): テーマ切り替え後に操作すると以下のエラーが出てしまう
+                // Looking up a deactivated widget's ancestor is unsafe.
                 subtitle: Slider(
                   value: cardElevation,
                   min: 0,
