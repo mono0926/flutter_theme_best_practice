@@ -152,10 +152,10 @@ packages:
   mono_kit:
     dependency: "direct main"
     description:
-      path: "../flutter_mono_kit"
-      relative: true
-    source: path
-    version: "0.13.0"
+      name: mono_kit
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.13.1"
   nested:
     dependency: "direct main"
     description:
