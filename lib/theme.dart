@@ -7,7 +7,7 @@ ThemeData buildLightTheme() {
       primary: Colors.blue,
       secondary: Colors.lightBlueAccent,
     ),
-  ).appliedCommon();
+  ).followLatestSpec();
 }
 
 ThemeData buildDarkTheme() {
@@ -15,5 +15,5 @@ ThemeData buildDarkTheme() {
     colorScheme: ColorScheme.dark(
       secondary: Colors.lightBlueAccent,
     ),
-  ).appliedCommon();
+  ).followLatestSpec();
 }

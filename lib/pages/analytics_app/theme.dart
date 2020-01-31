@@ -7,14 +7,14 @@ ThemeData buildLightTheme(BuildContext context) {
   return ThemeData.from(
     colorScheme: const ColorScheme.light(),
     textTheme: _textTheme(isLight: true),
-  ).appliedCommon().appliedAnalyticsCommon(context);
+  ).followLatestSpec().appliedAnalyticsCommon(context);
 }
 
 ThemeData buildDarkTheme(BuildContext context) {
   return ThemeData.from(
     colorScheme: const ColorScheme.dark(),
     textTheme: _textTheme(isLight: false),
-  ).appliedCommon().appliedAnalyticsCommon(context);
+  ).followLatestSpec().appliedAnalyticsCommon(context);
 }
 
 extension ThemeDataEx on ThemeData {
