@@ -7,18 +7,18 @@ ThemeData buildLightTheme(BuildContext context) {
   return ThemeData.from(
     colorScheme: const ColorScheme.light(),
     textTheme: _textTheme(isLight: true),
-  ).followLatestSpec().appliedAnalyticsCommon(context);
+  ).followLatestSpec()._appliedCommon(context);
 }
 
 ThemeData buildDarkTheme(BuildContext context) {
   return ThemeData.from(
     colorScheme: const ColorScheme.dark(),
     textTheme: _textTheme(isLight: false),
-  ).followLatestSpec().appliedAnalyticsCommon(context);
+  ).followLatestSpec()._appliedCommon(context);
 }
 
 extension ThemeDataEx on ThemeData {
-  ThemeData appliedAnalyticsCommon(BuildContext context) {
+  ThemeData _appliedCommon(BuildContext context) {
     return copyWith(
       cardTheme: CardTheme(
         elevation: context.select((ThemeModeNotifier n) => n.cardEelevation),
