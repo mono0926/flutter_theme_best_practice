@@ -4,37 +4,12 @@ import 'package:flutter/material.dart';
 
 import 'theme.dart';
 
-class ErrorCard extends StatelessWidget {
-  const ErrorCard({Key key}) : super(key: key);
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final colorScheme = theme.colorScheme;
-    final onError = colorScheme.onError;
-    return Theme(
-      data: theme.copyWith(
-        textTheme: theme.textTheme.apply(
-          bodyColor: onError,
-          displayColor: onError,
-        ),
-      ),
-      child: AnalyticsCard(
-        titleLabel: 'Error',
-        valueLabel: 'N/A',
-        subValueLabel: 'No data available',
-        cardColor: colorScheme.error,
-      ),
-    );
-  }
-}
-
 class AnalyticsCard extends StatelessWidget {
   const AnalyticsCard({
     Key key,
     @required this.titleLabel,
     @required this.valueLabel,
     this.subValueLabel,
-    this.cardColor,
     this.showBarChart = false,
     this.showLineChart = false,
     this.showSaveButton = false,
@@ -46,13 +21,11 @@ class AnalyticsCard extends StatelessWidget {
   final bool showBarChart;
   final bool showLineChart;
   final bool showSaveButton;
-  final Color cardColor;
 
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
     return Card(
-      color: cardColor,
       child: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -106,6 +79,32 @@ class AnalyticsCard extends StatelessWidget {
   }
 }
 
+class ErrorCard extends StatelessWidget {
+  const ErrorCard({Key key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
+    final onError = colorScheme.onError;
+    return Theme(
+      data: theme.copyWith(
+        textTheme: theme.textTheme.apply(
+          bodyColor: onError,
+          displayColor: onError,
+        ),
+        cardTheme: theme.cardTheme.copyWith(
+          color: colorScheme.error,
+        ),
+      ),
+      child: const AnalyticsCard(
+        titleLabel: 'Error',
+        valueLabel: 'N/A',
+        subValueLabel: 'No data available',
+      ),
+    );
+  }
+}
+
 class _BarChart extends StatelessWidget {
   const _BarChart({Key key}) : super(key: key);
   @override
@@ -123,34 +122,22 @@ class _BarChart extends StatelessWidget {
               titlesData: const FlTitlesData(show: false),
               borderData: FlBorderData(show: false),
               barGroups: data
-                  .map((y) => _makeGroupData(
-                        y,
-                        colorScheme: colorScheme,
-                        width: borderWidth,
+                  .map((y) => BarChartGroupData(
+                        x: 0,
+                        barRods: [
+                          BarChartRodData(
+                            y: y,
+                            color: colorScheme.onSurfaceVariant,
+                            width: borderWidth,
+                            borderRadius: BorderRadius.circular(4),
+                          ),
+                        ],
                       ))
                   .toList(),
             ),
           );
         },
       ),
-    );
-  }
-
-  BarChartGroupData _makeGroupData(
-    double y, {
-    @required ColorScheme colorScheme,
-    @required double width,
-  }) {
-    return BarChartGroupData(
-      x: 0,
-      barRods: [
-        BarChartRodData(
-          y: y,
-          color: colorScheme.onSurfaceVariant,
-          width: width,
-          borderRadius: BorderRadius.circular(4),
-        ),
-      ],
     );
   }
 }
