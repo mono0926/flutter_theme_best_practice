@@ -10,7 +10,7 @@ dependencies:
   cupertino_icons:
   enum_to_string:
   fl_chart:
-  mono_kit:
+  mono_kit: ^0.14.0-dev
   nested:
   provider:
   recase:

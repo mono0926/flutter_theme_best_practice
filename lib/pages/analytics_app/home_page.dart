@@ -1,3 +1,4 @@
+import 'package:enum_to_string/enum_to_string.dart';
 import 'package:flutter/material.dart';
 import 'package:mono_kit/mono_kit.dart';
 import 'package:provider/provider.dart';
@@ -171,7 +172,7 @@ class _ThemeModeMenuButton extends StatelessWidget {
         return ThemeMode.values.map((mode) {
           return PopupMenuItem(
             value: mode,
-            child: Text(enumValueToString(mode)),
+            child: Text(EnumToString.parse(mode)),
           );
         }).toList();
       },
