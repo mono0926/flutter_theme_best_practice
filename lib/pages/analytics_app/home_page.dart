@@ -18,7 +18,7 @@ class HomePage extends StatelessWidget {
         title: Text(pascalCaseFromRouteName(routeName)),
         actions: [
           IconButton(
-            icon: Icon(Icons.search),
+            icon: const Icon(Icons.search),
             onPressed: () {},
           ),
           const _ThemeModeMenuButton(),
@@ -26,7 +26,7 @@ class HomePage extends StatelessWidget {
       ),
       drawer: const Drawer(),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
         onPressed: () {},
       ),
       bottomSheet: const _BottomSheet(),
@@ -165,7 +165,7 @@ class _ThemeModeMenuButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PopupMenuButton<ThemeMode>(
-      icon: Icon(Icons.more_vert),
+      icon: const Icon(Icons.more_vert),
       initialValue: context.select((ThemeModeNotifier n) => n.mode),
       onSelected: (mode) => context.read<ThemeModeNotifier>().mode = mode,
       itemBuilder: (context) {

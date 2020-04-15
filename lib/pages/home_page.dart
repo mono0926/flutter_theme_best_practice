@@ -12,7 +12,7 @@ class HomePage extends StatelessWidget {
         title: const Text('Theme Best Practice'),
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.settings),
+            icon: const Icon(Icons.settings),
             onPressed: () =>
                 Navigator.of(context).pushNamed(SettingPage.routeName),
           )
@@ -23,7 +23,7 @@ class HomePage extends StatelessWidget {
           final routeName = info.routeName;
           return ListTile(
             title: Text(pascalCaseFromRouteName(routeName)),
-            trailing: Icon(Icons.chevron_right),
+            trailing: const Icon(Icons.chevron_right),
             onTap: () => Navigator.of(context).pushNamed(routeName),
           );
         }).toList(),

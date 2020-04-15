@@ -63,7 +63,7 @@ class AnalyticsCard extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 8),
                 alignment: Alignment.centerRight,
                 child: RaisedButton(
-                  child: Text(
+                  child: const Text(
                     'SAVE',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,

@@ -3,7 +3,7 @@ import 'package:mono_kit/mono_kit.dart';
 
 ThemeData buildLightTheme() {
   return ThemeData.from(
-    colorScheme: ColorScheme.light(
+    colorScheme: const ColorScheme.light(
       primary: Colors.blue,
       secondary: Colors.lightBlueAccent,
     ),
@@ -12,7 +12,7 @@ ThemeData buildLightTheme() {
 
 ThemeData buildDarkTheme() {
   return ThemeData.from(
-    colorScheme: ColorScheme.dark(
+    colorScheme: const ColorScheme.dark(
       secondary: Colors.lightBlueAccent,
     ),
   ).followLatestSpec();
