@@ -10,7 +10,7 @@ dependencies:
   cupertino_icons:
   enum_to_string:
   fl_chart:
-  mono_kit: ^0.14.0-dev
+  mono_kit:
   nested:
   provider:
   recase:
@@ -18,10 +18,5 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   pedantic_mono:
-dependency_overrides:
-  provider:
-    git:
-      url: https://github.com/rrousselGit/provider.git
-      ref: extensions
 flutter:
   uses-material-design: true
