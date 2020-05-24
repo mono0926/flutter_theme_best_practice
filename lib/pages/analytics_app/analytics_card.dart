@@ -119,7 +119,7 @@ class _BarChart extends StatelessWidget {
           final borderWidth = (width - (data.length - 1) * 2) / data.length;
           return BarChart(
             BarChartData(
-              titlesData: const FlTitlesData(show: false),
+              titlesData: FlTitlesData(show: false),
               borderData: FlBorderData(show: false),
               barGroups: data
                   .map((y) => BarChartGroupData(
@@ -151,12 +151,12 @@ class _LineChart extends StatelessWidget {
       aspectRatio: 2.5,
       child: LineChart(
         LineChartData(
-          titlesData: const FlTitlesData(show: false),
+          titlesData: FlTitlesData(show: false),
           borderData: FlBorderData(show: false),
-          gridData: const FlGridData(show: false),
+          gridData: FlGridData(show: false),
           lineBarsData: [
             LineChartBarData(
-              spots: const [
+              spots: [
                 FlSpot(0, 50),
                 FlSpot(1, 20),
                 FlSpot(2, 30),
@@ -177,7 +177,7 @@ class _LineChart extends StatelessWidget {
                 colorScheme.onSurfaceVariant,
               ],
               isStrokeCapRound: true,
-              dotData: const FlDotData(show: false),
+              dotData: FlDotData(show: false),
             ),
           ],
         ),
