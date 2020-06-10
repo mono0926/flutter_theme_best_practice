@@ -25,10 +25,7 @@ class HomePage extends StatelessWidget {
         ],
       ),
       drawer: const Drawer(),
-      floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.add),
-        onPressed: () {},
-      ),
+      floatingActionButton: const _Fab(),
       bottomSheet: const _BottomSheet(),
       body: SizedBox.expand(
         child: MaxWidthPaddingBuilder(
@@ -115,6 +112,24 @@ class HomePage extends StatelessWidget {
           subValueLabel: '-12.3% of target',
         ),
       ],
+    );
+  }
+}
+
+class _Fab extends StatelessWidget {
+  const _Fab({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return FloatingActionButton(
+      child: const Icon(Icons.add),
+      onPressed: () => Scaffold.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('+ tapped'),
+        ),
+      ),
     );
   }
 }
