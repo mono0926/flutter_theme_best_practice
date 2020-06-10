@@ -26,53 +26,57 @@ class AnalyticsCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
     return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Text(
-              titleLabel,
-              style: textTheme.subtitle1,
-            ),
-            const SizedBox(height: 8),
-            Text(
-              valueLabel,
-              style: textTheme.headline4,
-            ),
-            if (subValueLabel != null)
-              Padding(
-                padding: const EdgeInsets.only(top: 8),
-                child: Text(
-                  subValueLabel,
-                  style: textTheme.bodyText1,
-                ),
+      clipBehavior: Clip.hardEdge,
+      child: InkWell(
+        onTap: () {},
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Text(
+                titleLabel,
+                style: textTheme.subtitle1,
               ),
-            if (showBarChart)
-              const Padding(
-                padding: EdgeInsets.only(top: 16),
-                child: _BarChart(),
+              const SizedBox(height: 8),
+              Text(
+                valueLabel,
+                style: textTheme.headline4,
               ),
-            if (showLineChart)
-              const Padding(
-                padding: EdgeInsets.only(top: 16),
-                child: _LineChart(),
-              ),
-            if (showSaveButton)
-              Container(
-                padding: const EdgeInsets.only(top: 8),
-                alignment: Alignment.centerRight,
-                child: RaisedButton(
-                  child: const Text(
-                    'SAVE',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
+              if (subValueLabel != null)
+                Padding(
+                  padding: const EdgeInsets.only(top: 8),
+                  child: Text(
+                    subValueLabel,
+                    style: textTheme.bodyText1,
                   ),
-                  onPressed: () {},
                 ),
-              ),
-          ],
+              if (showBarChart)
+                const Padding(
+                  padding: EdgeInsets.only(top: 16),
+                  child: _BarChart(),
+                ),
+              if (showLineChart)
+                const Padding(
+                  padding: EdgeInsets.only(top: 16),
+                  child: _LineChart(),
+                ),
+              if (showSaveButton)
+                Container(
+                  padding: const EdgeInsets.only(top: 8),
+                  alignment: Alignment.centerRight,
+                  child: RaisedButton(
+                    child: const Text(
+                      'SAVE',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    onPressed: () {},
+                  ),
+                ),
+            ],
+          ),
         ),
       ),
     );
