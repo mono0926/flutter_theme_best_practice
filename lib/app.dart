@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 import 'package:mono_kit/mono_kit.dart';
 import 'package:provider/provider.dart';
 import 'package:theme_best_practice/models/theme_mode_notifier.dart';

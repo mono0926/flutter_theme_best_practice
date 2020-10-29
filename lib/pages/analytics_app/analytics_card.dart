@@ -131,7 +131,7 @@ class _BarChart extends StatelessWidget {
                         barRods: [
                           BarChartRodData(
                             y: y,
-                            color: colorScheme.onSurfaceVariant,
+                            colors: [colorScheme.onSurfaceVariant],
                             width: borderWidth,
                             borderRadius: BorderRadius.circular(4),
                           ),

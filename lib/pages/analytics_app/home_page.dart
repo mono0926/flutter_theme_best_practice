@@ -125,7 +125,7 @@ class _Fab extends StatelessWidget {
   Widget build(BuildContext context) {
     return FloatingActionButton(
       child: const Icon(Icons.add),
-      onPressed: () => Scaffold.of(context).showSnackBar(
+      onPressed: () => ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
           content: Text('+ tapped'),
         ),
@@ -187,7 +187,7 @@ class _ThemeModeMenuButton extends StatelessWidget {
         return ThemeMode.values.map((mode) {
           return PopupMenuItem(
             value: mode,
-            child: Text(EnumToString.parse(mode)),
+            child: Text(EnumToString.convertToString(mode)),
           );
         }).toList();
       },

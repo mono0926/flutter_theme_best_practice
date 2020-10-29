@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart' hide Router;
 import 'package:provider/provider.dart';
 import 'package:theme_best_practice/models/theme_mode_notifier.dart';
 

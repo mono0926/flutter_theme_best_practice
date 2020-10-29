@@ -36,7 +36,7 @@ class _ThemeSwitchTile extends StatelessWidget {
         items: ThemeMode.values
             .map((value) => DropdownMenuItem(
                   value: value,
-                  child: Text(EnumToString.parse(value)),
+                  child: Text(EnumToString.convertToString(value)),
                 ))
             .toList(),
       ),
