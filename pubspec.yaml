@@ -2,14 +2,14 @@ name: theme_best_practice
 description: A new Flutter application.
 version: 1.0.0+1
 environment:
-  sdk: ">=2.8.0-dev <3.0.0"
-  flutter: ">=1.14.6 <2.0.0"
+  sdk: ">=2.12.0 <3.0.0"
+  flutter: ">=2.0.0 <3.0.0"
 dependencies:
-  flutter:
-    sdk: flutter
   cupertino_icons:
   enum_to_string:
   fl_chart:
+  flutter:
+    sdk: flutter
   mono_kit:
   nested:
   provider:

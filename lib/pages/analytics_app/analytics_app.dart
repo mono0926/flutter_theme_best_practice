@@ -8,7 +8,7 @@ import 'package:theme_best_practice/widgets/widgets.dart';
 import 'home_page.dart';
 
 class AnalyticsApp extends StatelessWidget {
-  const AnalyticsApp({Key key}) : super(key: key);
+  const AnalyticsApp({Key? key}) : super(key: key);
 
   static const routeName = '/analytics';
 

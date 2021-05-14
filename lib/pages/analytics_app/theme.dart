@@ -6,7 +6,7 @@ import 'package:theme_best_practice/models/theme_mode_notifier.dart';
 ThemeData buildLightTheme(BuildContext context) {
   return ThemeData.from(
     colorScheme: ColorScheme.light(
-      secondary: Colors.purple[200],
+      secondary: Colors.purple[200]!,
     ),
     textTheme: _textTheme(isLight: true),
   ).followLatestSpec()._appliedCommon(context);
@@ -36,10 +36,10 @@ extension ThemeDataEx on ThemeData {
   }
 }
 
-TextTheme _textTheme({@required bool isLight}) {
+TextTheme _textTheme({required bool isLight}) {
   final typography = Typography.material2018();
   final theme = isLight ? typography.black : typography.white;
-  final defaultStyle = theme.bodyText2;
+  final defaultStyle = theme.bodyText2!;
   final defaultColor = defaultStyle.color;
   return TextTheme(
     headline4: TextStyle(

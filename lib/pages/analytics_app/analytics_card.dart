@@ -6,9 +6,9 @@ import 'theme.dart';
 
 class AnalyticsCard extends StatelessWidget {
   const AnalyticsCard({
-    Key key,
-    @required this.titleLabel,
-    @required this.valueLabel,
+    Key? key,
+    required this.titleLabel,
+    required this.valueLabel,
     this.subValueLabel,
     this.showBarChart = false,
     this.showLineChart = false,
@@ -17,13 +17,14 @@ class AnalyticsCard extends StatelessWidget {
 
   final String titleLabel;
   final String valueLabel;
-  final String subValueLabel;
+  final String? subValueLabel;
   final bool showBarChart;
   final bool showLineChart;
   final bool showSaveButton;
 
   @override
   Widget build(BuildContext context) {
+    final subValueLabel = this.subValueLabel;
     final textTheme = Theme.of(context).textTheme;
     return Card(
       clipBehavior: Clip.hardEdge,
@@ -65,14 +66,14 @@ class AnalyticsCard extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.only(top: 8),
                   alignment: Alignment.centerRight,
-                  child: RaisedButton(
+                  child: ElevatedButton(
+                    onPressed: () {},
                     child: const Text(
                       'SAVE',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    onPressed: () {},
                   ),
                 ),
             ],
@@ -84,7 +85,7 @@ class AnalyticsCard extends StatelessWidget {
 }
 
 class ErrorCard extends StatelessWidget {
-  const ErrorCard({Key key}) : super(key: key);
+  const ErrorCard({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -110,7 +111,7 @@ class ErrorCard extends StatelessWidget {
 }
 
 class _BarChart extends StatelessWidget {
-  const _BarChart({Key key}) : super(key: key);
+  const _BarChart({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
@@ -147,7 +148,7 @@ class _BarChart extends StatelessWidget {
 }
 
 class _LineChart extends StatelessWidget {
-  const _LineChart({Key key}) : super(key: key);
+  const _LineChart({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;

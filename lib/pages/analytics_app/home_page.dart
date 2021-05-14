@@ -7,7 +7,7 @@ import 'package:theme_best_practice/pages/analytics_app/analytics_card.dart';
 import 'package:theme_best_practice/router.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key key}) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
 
   static const routeName = '/analytics';
 
@@ -118,25 +118,25 @@ class HomePage extends StatelessWidget {
 
 class _Fab extends StatelessWidget {
   const _Fab({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
-      child: const Icon(Icons.add),
       onPressed: () => ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
           content: Text('+ tapped'),
         ),
       ),
+      child: const Icon(Icons.add),
     );
   }
 }
 
 class _BottomSheet extends StatelessWidget {
   const _BottomSheet({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -174,7 +174,7 @@ class _BottomSheet extends StatelessWidget {
 
 class _ThemeModeMenuButton extends StatelessWidget {
   const _ThemeModeMenuButton({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

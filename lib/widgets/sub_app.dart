@@ -3,18 +3,18 @@ import 'package:nested/nested.dart';
 
 class SubApp extends SingleChildStatelessWidget {
   const SubApp({
-    Key key,
-    @required Widget child,
+    Key? key,
+    required Widget child,
   }) : super(
           key: key,
           child: child,
         );
 
   @override
-  Widget buildWithChild(BuildContext context, Widget child) {
+  Widget buildWithChild(BuildContext context, Widget? child) {
     return Stack(
       children: <Widget>[
-        child,
+        child!,
         Align(
           alignment: Alignment.bottomLeft,
           child: SafeArea(

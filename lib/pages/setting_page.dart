@@ -5,7 +5,7 @@ import 'package:theme_best_practice/models/theme_mode_notifier.dart';
 import 'package:theme_best_practice/router.dart';
 
 class SettingPage extends StatelessWidget {
-  const SettingPage({Key key}) : super(key: key);
+  const SettingPage({Key? key}) : super(key: key);
 
   static const routeName = '/setting';
 
@@ -25,14 +25,14 @@ class SettingPage extends StatelessWidget {
 }
 
 class _ThemeSwitchTile extends StatelessWidget {
-  const _ThemeSwitchTile({Key key}) : super(key: key);
+  const _ThemeSwitchTile({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return ListTile(
       title: const Text('Theme Mode'),
       trailing: DropdownButton<ThemeMode>(
         value: context.select((ThemeModeNotifier n) => n.mode),
-        onChanged: (mode) => context.read<ThemeModeNotifier>().mode = mode,
+        onChanged: (mode) => context.read<ThemeModeNotifier>().mode = mode!,
         items: ThemeMode.values
             .map((value) => DropdownMenuItem(
                   value: value,

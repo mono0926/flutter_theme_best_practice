@@ -28,14 +28,14 @@ class Router {
     var pageBuilder = _routes[settings.name];
     if (pageBuilder != null) {
       return MaterialPageRoute<void>(
-        builder: (context) => pageBuilder(context, settings),
+        builder: (context) => pageBuilder!(context, settings),
         settings: settings,
       );
     }
     pageBuilder = _fadeRoutes[settings.name];
     if (pageBuilder != null) {
       return FadePageRoute<void>(
-        builder: (context) => pageBuilder(context, settings),
+        builder: (context) => pageBuilder!(context, settings),
         settings: settings,
       );
     }
@@ -43,14 +43,12 @@ class Router {
     pageBuilder = _modalRoutes[settings.name];
     if (pageBuilder != null) {
       return MaterialPageRoute<void>(
-        builder: (context) => pageBuilder(context, settings),
+        builder: (context) => pageBuilder!(context, settings),
         settings: settings,
         fullscreenDialog: true,
       );
     }
-
-    assert(false, 'unexpected settings: $settings');
-    return null;
+    throw UnexpectedError('unexpected settings: $settings');
   }
 }
 
@@ -59,7 +57,7 @@ String pascalCaseFromRouteName(String name) => name.substring(1).pascalCase;
 @immutable
 class PageInfo {
   const PageInfo({
-    @required this.routeName,
+    required this.routeName,
   });
 
   final String routeName;
