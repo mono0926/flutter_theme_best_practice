@@ -10,7 +10,7 @@ dependencies:
   fl_chart:
   flutter:
     sdk: flutter
-  mono_kit:
+  mono_kit: '>=0.21.1-0'
   nested:
   provider:
   recase:
