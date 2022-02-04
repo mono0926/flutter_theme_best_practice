@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart' hide Router;
-import 'package:mono_kit/mono_kit.dart';
+import 'package:mono_kit/mono_kit.dart' hide lightTheme, darkTheme;
 import 'package:provider/provider.dart';
 import 'package:theme_best_practice/models/theme_mode_notifier.dart';
 
@@ -14,8 +14,8 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     const title = 'mono_kit Demo';
     return MaterialApp(
-      theme: buildLightTheme(),
-      darkTheme: buildDarkTheme(),
+      theme: lightTheme(),
+      darkTheme: darkTheme(),
       themeMode: context.select((ThemeModeNotifier n) => n.mode),
       title: title,
       home: const HomePage(),

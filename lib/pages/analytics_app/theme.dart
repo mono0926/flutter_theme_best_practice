@@ -4,17 +4,18 @@ import 'package:provider/provider.dart';
 import 'package:theme_best_practice/models/theme_mode_notifier.dart';
 
 ThemeData buildLightTheme(BuildContext context) {
-  return ThemeData.from(
-    colorScheme: ColorScheme.light(
-      secondary: Colors.purple[200]!,
-    ),
+  return ThemeData(
+    colorSchemeSeed: Colors.green,
+    useMaterial3: true,
     textTheme: _textTheme(isLight: true),
   ).followLatestSpec()._appliedCommon(context);
 }
 
 ThemeData buildDarkTheme(BuildContext context) {
-  return ThemeData.from(
-    colorScheme: const ColorScheme.dark(),
+  return ThemeData(
+    colorSchemeSeed: Colors.green,
+    useMaterial3: true,
+    brightness: Brightness.dark,
     textTheme: _textTheme(isLight: false),
   ).followLatestSpec()._appliedCommon(context);
 }

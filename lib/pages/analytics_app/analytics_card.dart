@@ -1,8 +1,5 @@
 import 'package:fl_chart/fl_chart.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import 'theme.dart';
 
 class AnalyticsCard extends StatelessWidget {
   const AnalyticsCard({
@@ -161,7 +158,7 @@ class _LineChart extends StatelessWidget {
           gridData: FlGridData(show: false),
           lineBarsData: [
             LineChartBarData(
-              spots: [
+              spots: const [
                 FlSpot(0, 50),
                 FlSpot(1, 20),
                 FlSpot(2, 30),
